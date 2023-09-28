@@ -86,19 +86,10 @@ public class GameActivity extends AppCompatActivity {
             horse3.setProgress(horse3Progress + change3);
             horse4.setProgress(horse4Progress + change4);
 
-            if (horse1Progress == 100) {
-                raceHandler.removeCallbacksAndMessages(null);
-            }
-            if (horse2Progress == 100) {
-                raceHandler.removeCallbacksAndMessages(null);
-            }
-            if (horse3Progress == 100) {
-                raceHandler.removeCallbacksAndMessages(null);
-            }
-            if (horse4Progress == 100) {
-                raceHandler.removeCallbacksAndMessages(null);
-            }
-            startGame();
+           if (horse1Progress == 1000 || horse2Progress == 1000 || horse3Progress == 1000 || horse4Progress == 1000) {
+           } else {
+               startGame();
+           }
 
         }, 100);
     }
