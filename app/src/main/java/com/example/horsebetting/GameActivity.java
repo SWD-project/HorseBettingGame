@@ -17,10 +17,7 @@ public class GameActivity extends AppCompatActivity {
     SeekBar horse2;
     SeekBar horse3;
     SeekBar horse4;
-    AtomicInteger horse1Progress = new AtomicInteger();
-    AtomicInteger horse2Progress = new AtomicInteger();
-    AtomicInteger horse3Progress = new AtomicInteger();
-    AtomicInteger horse4Progress = new AtomicInteger();
+
     Handler raceHandler = new Handler();
 
     Random random = new Random();
@@ -37,30 +34,6 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    private void runGame(AtomicInteger horse1Progress, AtomicInteger horse2Progress, AtomicInteger horse3Progress, AtomicInteger horse4Progress) {
-        for (int i = 0; i < 4; i++) {
-            Random random = new Random();
-            switch (i) {
-                case 0:
-                    horse1Progress.getAndAdd(random.nextInt(100));
-                    break;
-                case 1:
-                    horse2Progress.getAndAdd(random.nextInt(100));
-                    break;
-                case 2:
-                    horse3Progress.getAndAdd(random.nextInt(100));
-                    break;
-                case 3:
-                    horse4Progress.getAndAdd(random.nextInt(100));
-                    break;
-            }
-        }
-
-        horse1.setProgress(horse1Progress.get());
-        horse2.setProgress(horse2Progress.get());
-        horse3.setProgress(horse3Progress.get());
-        horse4.setProgress(horse4Progress.get());
-    }
 
     private void bind() {
         horse1 = findViewById(R.id.seekBarHorse1);
@@ -86,10 +59,10 @@ public class GameActivity extends AppCompatActivity {
             horse3.setProgress(horse3Progress + change3);
             horse4.setProgress(horse4Progress + change4);
 
-           if (horse1Progress == 1000 || horse2Progress == 1000 || horse3Progress == 1000 || horse4Progress == 1000) {
-           } else {
-               startGame();
-           }
+            if (horse1Progress == 1000 || horse2Progress == 1000 || horse3Progress == 1000 || horse4Progress == 1000) {
+            } else {
+                startGame();
+            }
 
         }, 100);
     }
