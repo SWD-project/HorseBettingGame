@@ -37,9 +37,13 @@ public class GameActivity extends AppCompatActivity {
 
     private void bind() {
         horse1 = findViewById(R.id.seekBarHorse1);
+        horse1.setEnabled(false);
         horse2 = findViewById(R.id.seekBarHorse2);
+        horse2.setEnabled(false);
         horse3 = findViewById(R.id.seekBarHorse3);
+        horse3.setEnabled(false);
         horse4 = findViewById(R.id.seekBarHorse4);
+        horse4.setEnabled(false);
     }
 
     private void startGame() {
