@@ -22,6 +22,7 @@ public class GameActivity extends AppCompatActivity {
 
     Random random = new Random();
 
+    public static final String SHARED_PREFS = "shared_prefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,7 @@ public class GameActivity extends AppCompatActivity {
             horse4.setProgress(horse4Progress + change4);
 
             if (horse1Progress == 1000 || horse2Progress == 1000 || horse3Progress == 1000 || horse4Progress == 1000) {
+                return;
             } else {
                 startGame();
             }
