@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity">
+    tools:context=".GameActivity" android:background="@drawable/game_background">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -124,6 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="#8BC34A"
                 android:gravity="center"
                 android:text="TextView" />
         </LinearLayout>
@@ -139,6 +140,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#8BC34A"
                 android:src="@drawable/chip_casino_svgrepo_com" />
 
             <TextView
@@ -146,6 +148,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="#8BC34A"
                 android:gravity="center"
                 android:text="TextView" />
         </LinearLayout>
@@ -262,6 +265,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:backgroundTint="#B32F2F"
         android:text="Start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
