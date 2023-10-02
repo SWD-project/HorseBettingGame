@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -17,6 +19,12 @@ public class GameActivity extends AppCompatActivity {
     SeekBar horse4;
 
     SeekBar horse5;
+
+    EditText editTextBetHorse1;
+    EditText editTextBetHorse2;
+    EditText editTextBetHorse3;
+    EditText editTextBetHorse4;
+    EditText editTextBetHorse5;
 
     int horse1BaseSpeed;
     int horse2BaseSpeed;
@@ -40,6 +48,14 @@ public class GameActivity extends AppCompatActivity {
         startGameButton.setEnabled(true);
 
         startGameButton.setOnClickListener(v -> {
+            if (editTextBetHorse1.getText().toString().isEmpty() &&
+                editTextBetHorse2.getText().toString().isEmpty() &&
+                editTextBetHorse3.getText().toString().isEmpty() &&
+                editTextBetHorse4.getText().toString().isEmpty() &&
+                editTextBetHorse5.getText().toString().isEmpty()) {
+                Toast.makeText(GameActivity.this, "Please enter bet", Toast.LENGTH_SHORT).show();
+                return;
+            }
             startGame();
             startGameButton.setEnabled(false);
         });
@@ -59,6 +75,11 @@ public class GameActivity extends AppCompatActivity {
         horse5.setEnabled(false);
 
         startGameButton = findViewById(R.id.buttonStartGame);
+        editTextBetHorse1 = findViewById(R.id.editTextBetHorse1);
+        editTextBetHorse2 = findViewById(R.id.editTextBetHorse2);
+        editTextBetHorse3 = findViewById(R.id.editTextBetHorse3);
+        editTextBetHorse4 = findViewById(R.id.editTextBetHorse4);
+        editTextBetHorse5 = findViewById(R.id.editTextBetHorse5);
     }
 
     private void startGame() {
