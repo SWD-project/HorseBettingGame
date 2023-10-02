@@ -2,23 +2,30 @@ package com.example.horsebetting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class GameActivity extends AppCompatActivity {
-    Button raceButton;
+    Button startGameButton;
     SeekBar horse1;
     SeekBar horse2;
     SeekBar horse3;
     SeekBar horse4;
 
     SeekBar horse5;
+
+    EditText editTextBetHorse1;
+    EditText editTextBetHorse2;
+    EditText editTextBetHorse3;
+    EditText editTextBetHorse4;
+    EditText editTextBetHorse5;
 
     int horse1BaseSpeed;
     int horse2BaseSpeed;
@@ -38,8 +45,20 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         bind();
-        startGame();
+        startGameButton.setEnabled(true);
 
+        startGameButton.setOnClickListener(v -> {
+            if (editTextBetHorse1.getText().toString().isEmpty() &&
+                    editTextBetHorse2.getText().toString().isEmpty() &&
+                    editTextBetHorse3.getText().toString().isEmpty() &&
+                    editTextBetHorse4.getText().toString().isEmpty() &&
+                    editTextBetHorse5.getText().toString().isEmpty()) {
+                Toast.makeText(GameActivity.this, "Please enter bet", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            startGame();
+            startGameButton.setEnabled(false);
+        });
     }
 
     private void bind() {
@@ -53,6 +72,13 @@ public class GameActivity extends AppCompatActivity {
         horse4.setEnabled(false);
         horse5 = findViewById(R.id.seekBarHorse5);
         horse5.setEnabled(false);
+
+        startGameButton = findViewById(R.id.buttonStartGame);
+        editTextBetHorse1 = findViewById(R.id.editTextBetHorse1);
+        editTextBetHorse2 = findViewById(R.id.editTextBetHorse2);
+        editTextBetHorse3 = findViewById(R.id.editTextBetHorse3);
+        editTextBetHorse4 = findViewById(R.id.editTextBetHorse4);
+        editTextBetHorse5 = findViewById(R.id.editTextBetHorse5);
     }
 
     private void startGame() {
@@ -71,11 +97,13 @@ public class GameActivity extends AppCompatActivity {
             horse5BaseSpeed = random.nextInt(5);
 
 
-            int change1 = horse1BaseSpeed + random.nextInt(10);
-            int change2 = horse2BaseSpeed + random.nextInt(10);
-            int change3 = horse3BaseSpeed + random.nextInt(10);
-            int change4 = horse4BaseSpeed + random.nextInt(10);
-            int change5 = horse5BaseSpeed + random.nextInt(10);
+            int change1 = horse1BaseSpeed + random.nextInt(20);
+            int change2 = horse2BaseSpeed + random.nextInt(20);
+            int change3 = horse3BaseSpeed + random.nextInt(20);
+            int change4 = horse4BaseSpeed + random.nextInt(20);
+            int change5 = horse5BaseSpeed + random.nextInt(20);
+
+            Log.i("Change", change1 + " " + change2 + " " + change3 + " " + change4 + " " + change5);
 
             horse1.setProgress(horse1Progress + change1);
             horse2.setProgress(horse2Progress + change2);
@@ -85,7 +113,6 @@ public class GameActivity extends AppCompatActivity {
 
             if (horse1Progress == 1000 || horse2Progress == 1000 || horse3Progress == 1000 || horse4Progress == 1000 || horse5Progress == 1000) {
 
-                return;
             } else {
                 startGame();
             }
