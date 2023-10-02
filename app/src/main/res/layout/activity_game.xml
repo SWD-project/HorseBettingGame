@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/lane1">
 
             <SeekBar
                 android:id="@+id/seekBarHorse1"
@@ -36,7 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/lane2">
 
             <SeekBar
                 android:id="@+id/seekBarHorse2"
@@ -51,7 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/lane3">
 
             <SeekBar
                 android:id="@+id/seekBarHorse3"
@@ -66,7 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/lane4">
 
             <SeekBar
                 android:id="@+id/seekBarHorse4"
@@ -81,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/lane5">
 
             <SeekBar
                 android:id="@+id/seekBarHorse5"
@@ -150,7 +155,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="125dp"
         android:layout_marginTop="1dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -160,66 +165,94 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
 
             <EditText
                 android:id="@+id/editTextBetHorse1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:background="@android:color/holo_red_dark"
                 android:ems="10"
+                android:gravity="center|center_horizontal"
                 android:hint="Horse 1"
-                android:inputType="text"
-                android:text="Name" />
+                android:inputType="number"
+                android:maxWidth="488dp"
+                android:minHeight="48dp" />
 
             <EditText
                 android:id="@+id/editTextBetHorse2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:background="#F57C00"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="Horse 2"
-                android:inputType="text"
-                android:text="Name" />
+                android:inputType="number"
+                android:maxWidth="488dp"
+                android:minHeight="48dp" />
 
             <EditText
                 android:id="@+id/editTextBetHorse3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="#FBC02D"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="Horse 3"
-                android:inputType="text"
-                android:text="Name" />
+                android:inputType="number"
+                android:maxWidth="488dp"
+                android:minHeight="48dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:backgroundTint="#1976D2"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
 
 
             <EditText
                 android:id="@+id/editTextBetHorse4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:background="#388E3C"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="Horse 4"
-                android:inputType="text"
-                android:text="Name" />
+                android:inputType="number"
+                android:maxWidth="488dp" />
 
             <EditText
                 android:id="@+id/editTextBetHorse5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="#1976D2"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="Horse 5"
-                android:inputType="text"
-                android:text="Name" />
+                android:inputType="number"
+                android:maxWidth="488dp"
+                android:minHeight="48dp" />
 
         </LinearLayout>
     </LinearLayout>
