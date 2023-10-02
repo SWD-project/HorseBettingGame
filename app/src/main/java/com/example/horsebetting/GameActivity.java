@@ -2,17 +2,15 @@ package com.example.horsebetting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Button;
 import android.widget.SeekBar;
 
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class GameActivity extends AppCompatActivity {
-    Button raceButton;
+    Button startGameButton;
     SeekBar horse1;
     SeekBar horse2;
     SeekBar horse3;
@@ -39,8 +37,10 @@ public class GameActivity extends AppCompatActivity {
 
 
         bind();
-        startGame();
 
+        startGameButton.setOnClickListener(v -> {
+            startGame();
+        });
     }
 
 
@@ -55,6 +55,8 @@ public class GameActivity extends AppCompatActivity {
         horse4.setEnabled(false);
         horse5 = findViewById(R.id.seekBarHorse5);
         horse5.setEnabled(false);
+
+        startGameButton = findViewById(R.id.buttonStartGame);
     }
 
     private void startGame() {
