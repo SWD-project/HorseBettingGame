@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -49,10 +50,10 @@ public class GameActivity extends AppCompatActivity {
 
         startGameButton.setOnClickListener(v -> {
             if (editTextBetHorse1.getText().toString().isEmpty() &&
-                editTextBetHorse2.getText().toString().isEmpty() &&
-                editTextBetHorse3.getText().toString().isEmpty() &&
-                editTextBetHorse4.getText().toString().isEmpty() &&
-                editTextBetHorse5.getText().toString().isEmpty()) {
+                    editTextBetHorse2.getText().toString().isEmpty() &&
+                    editTextBetHorse3.getText().toString().isEmpty() &&
+                    editTextBetHorse4.getText().toString().isEmpty() &&
+                    editTextBetHorse5.getText().toString().isEmpty()) {
                 Toast.makeText(GameActivity.this, "Please enter bet", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -98,11 +99,13 @@ public class GameActivity extends AppCompatActivity {
             horse5BaseSpeed = random.nextInt(5);
 
 
-            int change1 = horse1BaseSpeed + random.nextInt(10);
-            int change2 = horse2BaseSpeed + random.nextInt(10);
-            int change3 = horse3BaseSpeed + random.nextInt(10);
-            int change4 = horse4BaseSpeed + random.nextInt(10);
-            int change5 = horse5BaseSpeed + random.nextInt(10);
+            int change1 = horse1BaseSpeed + random.nextInt(20);
+            int change2 = horse2BaseSpeed + random.nextInt(20);
+            int change3 = horse3BaseSpeed + random.nextInt(20);
+            int change4 = horse4BaseSpeed + random.nextInt(20);
+            int change5 = horse5BaseSpeed + random.nextInt(20);
+
+            Log.i("Change", change1 + " " + change2 + " " + change3 + " " + change4 + " " + change5);
 
             horse1.setProgress(horse1Progress + change1);
             horse2.setProgress(horse2Progress + change2);

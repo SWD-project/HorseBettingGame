@@ -30,7 +30,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:clickable="false"
-                android:max="1000" />
+                android:max="1000"
+                android:thumb="@drawable/hourse1"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -46,7 +48,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:clickable="false"
-                android:max="1000" />
+                android:max="1000"
+                android:thumb="@drawable/hourse1" />
         </LinearLayout>
 
         <LinearLayout
@@ -62,7 +65,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:clickable="false"
-                android:max="1000" />
+                android:max="1000"
+                android:thumb="@drawable/hourse1"/>
         </LinearLayout>
 
         <LinearLayout
@@ -78,7 +82,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:clickable="false"
-                android:max="1000" />
+                android:max="1000"
+                android:thumb="@drawable/hourse1"/>
         </LinearLayout>
 
         <LinearLayout
@@ -92,7 +97,9 @@
                 android:id="@+id/seekBarHorse5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:thumb="@drawable/hourse1"
+                android:max="1000"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -137,7 +144,7 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
+                android:layout_width="327dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#8BC34A"
@@ -149,7 +156,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#8BC34A"
-                android:gravity="center"
+                android:gravity="left|center_vertical"
                 android:text="TextView" />
         </LinearLayout>
 
