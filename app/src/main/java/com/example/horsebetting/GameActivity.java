@@ -37,12 +37,10 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-
         bind();
         startGame();
 
     }
-
 
     private void bind() {
         horse1 = findViewById(R.id.seekBarHorse1);
@@ -86,6 +84,7 @@ public class GameActivity extends AppCompatActivity {
             horse5.setProgress(horse5Progress + change5);
 
             if (horse1Progress == 1000 || horse2Progress == 1000 || horse3Progress == 1000 || horse4Progress == 1000 || horse5Progress == 1000) {
+
                 return;
             } else {
                 startGame();
