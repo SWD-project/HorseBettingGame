@@ -18,10 +18,16 @@ public class GameActivity extends AppCompatActivity {
     SeekBar horse3;
     SeekBar horse4;
 
+    int horse1BaseSpeed;
+    int horse2BaseSpeed;
+    int horse3BaseSpeed;
+    int horse4BaseSpeed;
+
     Handler raceHandler = new Handler();
 
     Random random = new Random();
 
+    public static final String SHARED_PREFS = "shared_prefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +59,16 @@ public class GameActivity extends AppCompatActivity {
             int horse3Progress = horse3.getProgress();
             int horse4Progress = horse4.getProgress();
 
-            int change1 = random.nextInt(10);
-            int change2 = random.nextInt(10);
-            int change3 = random.nextInt(10);
-            int change4 = random.nextInt(10);
+            horse1BaseSpeed = random.nextInt(5);
+            horse2BaseSpeed = random.nextInt(5);
+            horse3BaseSpeed = random.nextInt(5);
+            horse4BaseSpeed = random.nextInt(5);
+
+
+            int change1 = horse1BaseSpeed + random.nextInt(10);
+            int change2 = horse2BaseSpeed + random.nextInt(10);
+            int change3 = horse3BaseSpeed + random.nextInt(10);
+            int change4 = horse4BaseSpeed + random.nextInt(10);
 
             horse1.setProgress(horse1Progress + change1);
             horse2.setProgress(horse2Progress + change2);
@@ -64,6 +76,7 @@ public class GameActivity extends AppCompatActivity {
             horse4.setProgress(horse4Progress + change4);
 
             if (horse1Progress == 1000 || horse2Progress == 1000 || horse3Progress == 1000 || horse4Progress == 1000) {
+                return;
             } else {
                 startGame();
             }

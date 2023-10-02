@@ -1,9 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_racing"
     tools:context=".ResultActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Hình ảnh avatar người chơi -->
+    <ImageView
+        android:id="@+id/avatarImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/avatar_player" />
+
+    <!-- TextView để hiển thị số tiền thắng cược của người chơi -->
+    <TextView
+        android:id="@+id/playerWinningsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/avatarImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Số tiền thắng cược:"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <!-- TextView để hiển thị tổng số tiền của người chơi -->
+    <TextView
+        android:id="@+id/balanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playerWinningsTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Tổng số tiền:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Hình ảnh của 3 con ngựa nằm bên trái -->
+    <LinearLayout
+        android:id="@+id/horsesLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+        <!-- Hình ảnh con ngựa về nhất -->
+        <ImageView
+            android:id="@+id/horse1ImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp" />
+
+        <!-- Hình ảnh con ngựa về nhì -->
+        <ImageView
+            android:id="@+id/horse2ImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp" />
+
+        <!-- Hình ảnh con ngựa về ba -->
+        <ImageView
+            android:id="@+id/horse3ImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+    <!-- Hình ảnh của 3 chiếc cúp nằm bên phải -->
+    <LinearLayout
+        android:id="@+id/cupsLayout"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical">
+
+        <!-- Hình ảnh cúp vàng (hiển thị cứng) -->
+        <ImageView
+            android:id="@+id/goldCupImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/gold_cup" />
+
+        <!-- Hình ảnh cúp bạc (hiển thị cứng) -->
+        <ImageView
+            android:id="@+id/silverCupImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/silver_cup" />
+
+        <!-- Hình ảnh cúp đồng (hiển thị cứng) -->
+        <ImageView
+            android:id="@+id/bronzeCupImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/bronze_cup" />
+
+    </LinearLayout>
+</RelativeLayout>
