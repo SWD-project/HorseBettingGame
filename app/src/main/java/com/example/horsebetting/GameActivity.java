@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.horsebetting.entity.Game;
@@ -37,18 +38,19 @@ public class GameActivity extends AppCompatActivity {
     int horse3BaseSpeed;
     int horse4BaseSpeed;
     int horse5BaseSpeed;
-
     Handler raceHandler = new Handler();
-
     Random random = new Random();
     private UserManagement userManagement = UserManagement.getInstance();
-
+    TextView textViewWelcome;
+    TextView textViewCurrentBalance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
         bind();
+        textViewWelcome.setText("Welcome " + userManagement.getCurrentUser().getUsername());
+        textViewCurrentBalance.setText("" + userManagement.getCurrentUser().getStore() + "$");
         startGameButton.setEnabled(true);
         startGameButton.setOnClickListener(v -> {
             Game game = new Game(userManagement.getCurrentUser().getStore());
@@ -65,13 +67,13 @@ public class GameActivity extends AppCompatActivity {
             game.setBetHourse3(Integer.parseInt(editTextBetHorse3.getText().toString()));
             game.setBetHourse4(Integer.parseInt(editTextBetHorse4.getText().toString()));
             game.setBetHourse5(Integer.parseInt(editTextBetHorse5.getText().toString()));
+            if (game.getTotalBet() > game.getCurrentBalance()) {
+                Toast.makeText(GameActivity.this, "Please enter no more than current balance", Toast.LENGTH_SHORT).show();
+                return;
+            }
             startGame(game);
             startGameButton.setEnabled(false);
         });
-        startGameButton.setEnabled(true);
-        Intent intent = new Intent(this, ResultActivity.class);
-        startActivity(intent);
-        finish();
     }
 
     private void bind() {
@@ -92,6 +94,9 @@ public class GameActivity extends AppCompatActivity {
         editTextBetHorse3 = findViewById(R.id.editTextBetHorse3);
         editTextBetHorse4 = findViewById(R.id.editTextBetHorse4);
         editTextBetHorse5 = findViewById(R.id.editTextBetHorse5);
+
+        textViewWelcome = findViewById(R.id.textViewWelcome);
+        textViewCurrentBalance = findViewById(R.id.textViewCurrentBalance);
     }
 
     private void startGame(Game game) {
@@ -121,18 +126,24 @@ public class GameActivity extends AppCompatActivity {
             horse5.setProgress(horse5Progress + change5);
 
             if (horse1Progress == 1000) {
-                game.setHourseWinning(1);
+                game.setHourseWinning(R.drawable.horse1);
             } else if (horse2Progress == 1000) {
-                game.setHourseWinning(2);
+                game.setHourseWinning(R.drawable.horse2);
             } else if (horse3Progress == 1000) {
-                game.setHourseWinning(3);
+                game.setHourseWinning(R.drawable.horse3);
             } else if (horse4Progress == 1000) {
-                game.setHourseWinning(4);
+                game.setHourseWinning(R.drawable.horse4);
             } else if (horse5Progress == 1000) {
-                game.setHourseWinning(5);
+                game.setHourseWinning(R.drawable.horse5);
             }
             if (game.getTotalWinningHourse() != 3) {
                 startGame(game);
+            } else {
+                Intent intent = new Intent(this, ResultActivity.class);
+                intent.putExtra("horse1Image", game.getFirstHourseWinning());
+                intent.putExtra()
+                startActivity(intent);
+                finish();
             }
         }, 100);
     }

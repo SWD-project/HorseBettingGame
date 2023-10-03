@@ -105,6 +105,9 @@ public class Game {
         this.currentBalance = currentBalance;
     }
 
+    public int getTotalBet() {
+        return betHourse1 + betHourse2 + betHourse3 + betHourse4 + betHourse5;
+    }
     public void setHourseWinning(int hourseId) {
         switch (totalWinningHourse) {
             case 0:

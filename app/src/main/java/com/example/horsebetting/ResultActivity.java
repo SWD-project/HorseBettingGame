@@ -29,9 +29,9 @@ public class ResultActivity extends AppCompatActivity {
 
         // Nhận dữ liệu từ GameActivity
         Intent intent = getIntent();
-        int horse1ImageResource = intent.getIntExtra("horse1Image", 1);
-        int horse2ImageResource = intent.getIntExtra("horse2Image", 2);
-        int horse3ImageResource = intent.getIntExtra("horse3Image", 3);
+        int horse1ImageResource = intent.getIntExtra("horse1Image", R.drawable.horse1);
+        int horse2ImageResource = intent.getIntExtra("horse2Image", R.drawable.horse2);
+        int horse3ImageResource = intent.getIntExtra("horse3Image", R.drawable.horse3);
         int currentBalance = intent.getIntExtra("currentBalance", 0);
         int winnings = intent.getIntExtra("winnings", 0);
         boolean isWinner = winnings > 0;
