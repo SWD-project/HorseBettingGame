@@ -81,6 +81,11 @@ public class GameActivity extends AppCompatActivity {
                 Toast.makeText(GameActivity.this, "Please enter no more than current balance", Toast.LENGTH_SHORT).show();
                 return;
             }
+
+            if(game.getTotalBet() == 0){
+                Toast.makeText(GameActivity.this, "Please enter bet", Toast.LENGTH_SHORT).show();
+                return;
+            }
             userManagement.updateMoney(userManagement.getCurrentUser().getStore() - game.getTotalBet());
             startGame(game);
             startGameButton.setEnabled(false);
