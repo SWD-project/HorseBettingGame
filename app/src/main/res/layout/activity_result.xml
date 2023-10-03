@@ -61,20 +61,8 @@
             android:layout_marginTop="16dp" />
 
         <!-- Hình ảnh con ngựa về nhì -->
-        <ImageView
-            android:id="@+id/horse2ImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp" />
 
         <!-- Hình ảnh con ngựa về ba -->
-        <ImageView
-            android:id="@+id/horse3ImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp" />
 
     </LinearLayout>
 
@@ -98,22 +86,8 @@
             android:src="@drawable/gold_cup" />
 
         <!-- Hình ảnh cúp bạc (hiển thị cứng) -->
-        <ImageView
-            android:id="@+id/silverCupImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/silver_cup" />
 
         <!-- Hình ảnh cúp đồng (hiển thị cứng) -->
-        <ImageView
-            android:id="@+id/bronzeCupImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/bronze_cup" />
 
     </LinearLayout>
 </RelativeLayout>

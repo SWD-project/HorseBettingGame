@@ -131,9 +131,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:background="#8BC34A"
                 android:gravity="center"
                 android:text="TextView" />
+            <TextView
+                android:id="@+id/textViewLogout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="#8BC34A"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Logout" />
         </LinearLayout>
 
         <LinearLayout
@@ -156,6 +168,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#8BC34A"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:gravity="left|center_vertical"
                 android:text="TextView" />
         </LinearLayout>
@@ -187,6 +201,10 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center|center_horizontal"
                 android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColorHint="@color/white"
+                android:text="0"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
                 android:ems="10"
@@ -203,6 +221,10 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColorHint="@color/white"
+                android:text="0"
                 android:background="#F57C00"
                 android:ems="10"
                 android:gravity="center"
@@ -218,6 +240,10 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="#FBC02D"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColorHint="@color/white"
+                android:text="0"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Horse 3"
@@ -232,6 +258,7 @@
             android:layout_weight="1"
             android:backgroundTint="#1976D2"
             android:orientation="horizontal"
+
             android:paddingStart="10dp"
             android:paddingEnd="10dp">
 
@@ -240,6 +267,10 @@
                 android:id="@+id/editTextBetHorse4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColorHint="@color/white"
+                android:text="0"
                 android:layout_gravity="center"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
@@ -253,6 +284,10 @@
             <EditText
                 android:id="@+id/editTextBetHorse5"
                 android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColorHint="@color/white"
+                android:text="0"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
@@ -277,5 +312,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
