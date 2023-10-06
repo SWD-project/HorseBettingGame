@@ -3,6 +3,7 @@ package com.example.horsebetting;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -54,6 +55,7 @@ public class GameActivity extends AppCompatActivity {
         textViewWelcome.setText("Welcome " + userManagement.getCurrentUser().getUsername());
         textViewCurrentBalance.setText("" + userManagement.getCurrentUser().getStore() + "$");
         startGameButton.setEnabled(true);
+        MediaPlayer mp = MediaPlayer.create(this, R.raw.horse);
         textViewLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,6 +89,8 @@ public class GameActivity extends AppCompatActivity {
                 return;
             }
             userManagement.updateMoney(userManagement.getCurrentUser().getStore() - game.getTotalBet());
+            textViewCurrentBalance.setText(userManagement.getCurrentUser().getStore() + "$");
+            mp.start();
             startGame(game);
             startGameButton.setEnabled(false);
         });
@@ -144,19 +148,19 @@ public class GameActivity extends AppCompatActivity {
 
             if (horse1Progress == 1000) {
                 game.setHourseWinning(R.drawable.horse1);
-                game.setWinningCoin(game.getBetHourse1() * 5);
+                game.setWinningCoin(game.getBetHourse1() * 4);
             } else if (horse2Progress == 1000) {
                 game.setHourseWinning(R.drawable.horse2);
-                game.setWinningCoin(game.getBetHourse2() * 5);
+                game.setWinningCoin(game.getBetHourse2() * 4);
             } else if (horse3Progress == 1000) {
                 game.setHourseWinning(R.drawable.horse3);
-                game.setWinningCoin(game.getBetHourse3() * 5);
+                game.setWinningCoin(game.getBetHourse3() * 4);
             } else if (horse4Progress == 1000) {
                 game.setHourseWinning(R.drawable.horse4);
-                game.setWinningCoin(game.getBetHourse4() * 5);
+                game.setWinningCoin(game.getBetHourse4() * 4);
             } else if (horse5Progress == 1000) {
                 game.setHourseWinning(R.drawable.horse5);
-                game.setWinningCoin(game.getBetHourse5() * 5);
+                game.setWinningCoin(game.getBetHourse5() * 4);
             }
             if (game.getTotalWinningHourse() != 1) {
                 startGame(game);
